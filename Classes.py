@@ -5,10 +5,10 @@ class LoginPage:
         self.browser = browser
 
     def login(self, username, password):
-        username_input = self.browser.find_element_by_css_selector("input[name='username']")
-        password_input = self.browser.find_element_by_css_selector("input[name='password']")
-        username_input.send_keys(username)
-        password_input.send_keys(password)
+        username_input = self.browser.find_element_by_css_selector("input[name='username']")            #it finds the appropriate place of the username input
+        password_input = self.browser.find_element_by_css_selector("input[name='password']")            #it finds the appropriate place of the password input
+        username_input.send_keys(username)                                                              #it will take the username parameter that we sent through the main function
+        password_input.send_keys(password)                  
         login_button = self.browser.find_element_by_xpath("//button[@type='submit']")
         login_button.click()
         sleep(1)
